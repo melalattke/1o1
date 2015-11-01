@@ -1,0 +1,22 @@
+<%= form_for(@skin, html: { multipart: true }) do |f| %>
+<%= f.file_field :avatar %>
+  <% if @skin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@skin.errors.count, "error") %> prohibited this skin from being saved:</h2>
+
+      <ul>
+      <% @skin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name2 %><br>
+    <%= f.text_field :name2 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

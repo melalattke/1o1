@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @match_style.style_id %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @match_style.item_id %>
+</p>
+
+<%= link_to 'Edit', edit_match_style_path(@match_style) %> |
+<%= link_to 'Back', match_styles_path %>

@@ -1,0 +1,27 @@
+<h1>Listing match_skins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Skins</th>
+      <th>Items</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @match_skins.each do |match_skin| %>
+      <tr>
+        <td><%= match_skin.Skins_id %></td>
+        <td><%= match_skin.Items_id %></td>
+        <td><%= link_to 'Show', match_skin %></td>
+        <td><%= link_to 'Edit', edit_match_skin_path(match_skin) %></td>
+        <td><%= link_to 'Destroy', match_skin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Match skin', new_match_skin_path %>

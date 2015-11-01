@@ -1,0 +1,81 @@
+<div id="wrapper">
+  <div id="header-wrapper">
+    <div id="header" class="container">
+      <div id="logo">
+            <%=image_tag "Logo png blanco-05.png" %>
+          </div>
+        </div>
+    </div> 
+</div>
+
+<div id="menu-wrapper" style="background:black;">
+  <div id="menu" class="container">
+      <ul>
+        <li class="current_page_item"><a href="#">Homepage</a></li>       
+        <li><a href="#">All Products</a></li>
+        <li><a href="#">Tips & Influencers</a></li>
+                <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="footer-wrapper">
+  <div id="footer" class="container">
+    <div id="box1">
+      <div class="title">
+
+<h1>Your Choice: <%= @style_name %> <%= @skin_name %> </h1> </div> 
+    </div>
+  </div>
+</div>
+
+  <tbody>
+    <table class="table">
+  <thead>
+    <tr>
+      <tr>imagen </tr> 
+
+
+
+<div id="portfolio-wrapper">
+
+    <div id="portfolio" class="container">
+
+<% @skin_items.each do |skin_item| %>
+
+  <%= skin_item.item.name %>
+
+<% end %>
+
+<% @style_items.each do |style_item| %>
+
+  <%= style_item.item.name %>
+
+<% end %>
+
+    <!--/tr>
+  </thead-->
+
+  <%= link_to 'Buy', new_item_path %>
+  <!--link to 'Skin Page' combination_item_path este link va a la página combinations y trin salen las combinaciones-->
+
+  </tbody>
+</table>
+  </div>
+</div> 
+
+<div id="portfolio2-wrapper">
+  <div class="image-centered" id="stepby">
+<%=image_tag "stepstep-09",:style => "display: block;
+      margin-left: auto;
+      margin-right: auto" %>
+</div>
+</div>
+    
+ <div id="logobajo" class="container" style="background:black;">
+<%=image_tag "Logo png blanco-1-05.png"  %>
+<p>&copy; 101. All rights reserved. - 2015 </p>
+    
+</div>
+    
+</body>

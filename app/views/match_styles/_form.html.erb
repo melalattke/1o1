@@ -1,0 +1,26 @@
+<%= form_for(@match_style) do |f| %>
+  <% if @match_style.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@match_style.errors.count, "error") %> prohibited this match_style from being saved:</h2>
+
+      <ul>
+      <% @match_style.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+    <%= f.label :Styles_id %><br>
+    <%= collection_select(:match_style,:style_id,Style.all,:id,:name) %>
+  </div>
+
+    <div class="field">
+    <%= f.label :item_id %><br>
+    <%= collection_select(:match_style,:item_id,Item.all,:id,:name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

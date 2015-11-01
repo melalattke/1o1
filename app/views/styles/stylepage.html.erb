@@ -1,0 +1,92 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>One/One</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+</head>
+
+
+<div id="wrapper">
+  <div id="header-wrapper">
+    <div id="header" class="container">
+      <div id="logo">
+          <%=image_tag "Logo png blanco-05.png" %>
+          </div>
+        </div>
+    </div> 
+</div>
+
+<div id="menu-wrapper" style="background:black;">
+  <div id="menu" class="container">
+      <ul>
+        <li class="current_page_item"><a href="#">Homepage</a></li>       
+        <li><a href="#">All Products</a></li>
+        <li><a href="#">Tips & Influencers</a></li>
+                <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+</div>
+
+ <div id="page" class="container"> <!-- aca va la imagen grande! -->
+  <%=image_tag "Grande 1.png" %>
+ </div>
+<div id="footer-wrapper">
+  <div id="footer" class="container">
+    <div id="box1">
+      <div class="title">
+        <h1> MAKEUP LAB  </h1>
+        <h1> Do it yourself! We'll guide you to do your own makeup based on your style and skin type. Let’s begin!  </h1>
+         </div>
+    </div>
+  </div>
+</div>
+
+<div class="title" id="portfolio-wrapper" style="forn">
+    <div id="portfolio" class="container">
+                <br></br>
+                <div class="title">
+<h1> 1. Choose your style of makeup: </h1>
+</div>
+  <tbody>
+    <%= form_tag('/skinpage', method: :get) do -%>
+  <div><%= submit_tag 'next page' %></div>
+
+    <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Time</th>
+      <th>Day</th>
+      <th>Difficulty</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @styles.each do |style| %>
+      <tr>
+        <td><%= radio_button_tag 'style', style.id%></td>
+        <td><%= style.name %></td>
+        <td><%= style.time %></td>
+        <td><%= style.day %></td>
+        <td><%= style.difficulty %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end -%>
+</div>  
+</div>      
+
+ <div id="logobajo" class="container" style="background:black;">
+<%=image_tag "Logo png blanco-1-05.png"  %>
+<p>&copy; 101. All rights reserved. - 2015 </p>
+    
+</div>
+
+
+
+
+

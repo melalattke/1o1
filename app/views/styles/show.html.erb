@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @style.avatar.url %>
+<%= image_tag @style.avatar.url(:medium) %>
+<%= image_tag @style.avatar.url(:thumb) %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @style.name %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @style.time %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @style.day %>
+</p>
+
+<p>
+  <strong>Difficulty:</strong>
+  <%= @style.difficulty %>
+</p>
+
+<%= link_to 'Edit', edit_style_path(@style) %> |
+<%= link_to 'Back', styles_path %>

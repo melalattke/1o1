@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Skins:</strong>
+  <%= @match_skin.Skins_id %>
+</p>
+
+<p>
+  <strong>Items:</strong>
+  <%= @match_skin.Items_id %>
+</p>
+
+<%= link_to 'Edit', edit_match_skin_path(@match_skin) %> |
+<%= link_to 'Back', match_skins_path %>

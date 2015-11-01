@@ -1,0 +1,27 @@
+<h1>Listing match_styles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Style</th>
+      <th>Item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @match_styles.each do |match_style| %>
+      <tr>
+        <td><%= match_style.style_id %></td>
+        <td><%= match_style.item_id %></td>
+        <td><%= link_to 'Show', match_style %></td>
+        <td><%= link_to 'Edit', edit_match_style_path(match_style) %></td>
+        <td><%= link_to 'Destroy', match_style, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Match style', new_match_style_path %>

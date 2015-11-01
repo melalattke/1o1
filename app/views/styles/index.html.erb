@@ -1,0 +1,44 @@
+<h1>Listing styles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Time</th>
+      <th>Day</th>
+      <th>Difficulty</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @styles.each do |style| %>
+      <tr>
+        <td><%= style.name %></td>
+        <td><%= style.time %></td>
+
+        <%if style.day==false %>
+          <td>night</td>
+        <%else%>
+          <td>day</td>
+      <%end%>
+
+      <%if style.difficulty==1 %>
+          <td>easy</td>
+        <%elsif style.difficulty==2%>
+          <td>medium</td>
+        <%else%>
+          <td>hard</td>
+      <%end%>
+
+        <td><%= link_to 'Show', style %></td>
+        <td><%= link_to 'Edit', edit_style_path(style) %></td>
+        <td><%= link_to 'Destroy', style, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Style', new_style_path %>
